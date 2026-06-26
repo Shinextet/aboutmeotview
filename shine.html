@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shine Htet Aung | Professional Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#10b981', // Emerald Excel Green
+                            600: '#059669',
+                            700: '#047857',
+                        },
+                        darkBg: '#0b0f19',
+                        darkCard: '#151b2d'
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .dark .glassmorphism {
+            background: rgba(21, 27, 45, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-darkBg dark:text-slate-200 min-h-screen relative overflow-x-hidden">
+
+    <!-- Background decorative gradients -->
+    <div class="absolute top-0 left-1/4 w-72 h-72 sm:w-96 sm:h-96 bg-emerald-100 dark:bg-emerald-900/10 rounded-full blur-3xl -z-10 opacity-70"></div>
+    <div class="absolute top-1/3 right-1/4 w-72 h-72 sm:w-96 sm:h-96 bg-blue-100 dark:bg-blue-900/10 rounded-full blur-3xl -z-10 opacity-70"></div>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-50 w-full transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 mt-2 rounded-2xl px-4 sm:px-6 glassmorphism shadow-sm">
+                <!-- Logo -->
+                <a href="#hero" class="flex items-center space-x-2">
+                    <span class="text-xl sm:text-2xl font-extrabold bg-gradient-to-r from-emerald-500 to-teal-400 bg-clip-text text-transparent">S.H.A.</span>
+                </a>
+
+                <!-- Desktop Navigation Menu -->
+                <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
+                    <a href="#about" class="font-semibold text-sm hover:text-emerald-500 transition-colors">About</a>
+                    <a href="#skills" class="font-semibold text-sm hover:text-emerald-500 transition-colors">Skills</a>
+                    <a href="#experience" class="font-semibold text-sm hover:text-emerald-500 transition-colors">Experience</a>
+                    <a href="#projects" class="font-semibold text-sm hover:text-emerald-500 transition-colors">Excel Projects</a>
+                    <a href="#contact" class="font-semibold text-sm hover:text-emerald-500 transition-colors">Contact</a>
+                </nav>
+
+                <!-- Actions -->
+                <div class="flex items-center space-x-3 sm:space-x-4">
+                    <!-- Light/Dark Mode Switcher -->
+                    <button id="themeToggle" class="p-2 rounded-xl bg-white/60 dark:bg-slate-800/60 hover:bg-white dark:hover:bg-slate-800 border border-slate-200/60 dark:border-slate-700/60 transition-all shadow-sm" aria-label="Toggle theme">
+                        <svg id="sunIcon" class="w-5 h-5 text-amber-500 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.364l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
+                        <svg id="moonIcon" class="w-5 h-5 text-slate-700 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+                    </button>
+
+                    <!-- Contact CTA -->
+                    <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white dark:bg-white dark:hover:bg-slate-100 dark:text-slate-950 font-semibold text-sm transition-all shadow-md">
+                        Hire Me
+                    </a>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobileMenuBtn" class="md:hidden p-2 rounded-xl bg-white/60 dark:bg-slate-800/60 hover:bg-white dark:hover:bg-slate-800 border border-slate-200/60 dark:border-slate-700/60 transition-all shadow-sm">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="hamburgerIcon"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                        <svg class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="closeIcon"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobileMenu" class="hidden md:hidden absolute top-18 left-0 w-full px-4 z-40">
+            <div class="rounded-2xl glassmorphism shadow-xl p-5 flex flex-col space-y-3 border border-slate-200/60 dark:border-slate-700/60">
+                <a href="#about" class="mobile-link text-base font-semibold py-2 border-b border-slate-100 dark:border-slate-800/60">About</a>
+                <a href="#skills" class="mobile-link text-base font-semibold py-2 border-b border-slate-100 dark:border-slate-800/60">Skills</a>
+                <a href="#experience" class="mobile-link text-base font-semibold py-2 border-b border-slate-100 dark:border-slate-800/60">Experience</a>
+                <a href="#projects" class="mobile-link text-base font-semibold py-2 border-b border-slate-100 dark:border-slate-800/60">Excel Projects</a>
+                <a href="#contact" class="mobile-link text-base font-semibold py-2">Contact</a>
+                <a href="#contact" class="mobile-link flex items-center justify-center w-full py-3 rounded-xl bg-slate-900 text-white dark:bg-white dark:text-slate-950 font-bold transition-all shadow-md">
+                    Hire Me
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="min-h-[calc(100vh-5rem)] flex items-center py-8 sm:py-12 lg:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                
+                <!-- Hero Left Content (Appears second on mobile, first on desktop) -->
+                <div class="lg:col-span-7 flex flex-col justify-center text-left space-y-5 sm:space-y-6 order-2 lg:order-1">
+                    <div class="inline-flex items-center space-x-2 bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/30 px-3.5 py-1.5 rounded-full w-fit">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <span class="text-xs sm:text-sm font-bold text-emerald-700 dark:text-emerald-400">Available for Inventory & Operations Roles</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight leading-tight">
+                        Hi, I'm <span class="bg-gradient-to-r from-emerald-500 to-teal-400 bg-clip-text text-transparent">Shine Htet Aung</span>
+                    </h1>
+
+                    <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-600 dark:text-slate-400">
+                        Advanced Excel & Inventory Specialist
+                    </h2>
+
+                    <p class="text-sm sm:text-base lg:text-lg text-slate-500 dark:text-slate-400 max-w-xl leading-relaxed">
+                        I specialize in inventory management, data operations, and business automation using Excel. Converting chaotic stock files into beautiful, automated dashboards.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
+                        <a href="#contact" class="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white dark:bg-white dark:hover:bg-slate-100 dark:text-slate-950 font-bold text-sm transition-all shadow-md">
+                            Contact Me
+                        </a>
+                        <a href="Shine_Htet_Aung_CV.pdf" target="_blank" class="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white dark:bg-white dark:hover:bg-slate-100 dark:text-slate-950 font-bold text-sm transition-all shadow-md">
+                            View Reference CV (PDF)
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Right (Appears first on mobile, second on desktop) -->
+                <div class="lg:col-span-5 relative flex items-center justify-center order-1 lg:order-2">
+                    <div class="relative w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full bg-gradient-to-tr from-emerald-400 to-teal-300 p-2 shadow-2xl animate-[spin_60s_linear_infinite]">
+                        <div class="w-full h-full rounded-full bg-slate-100 dark:bg-darkCard overflow-hidden relative flex items-center justify-center">
+                        </div>
+                    </div>
+                    <!-- Real Avatar Circle -->
+                    <div class="absolute w-52 h-52 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-full overflow-hidden bg-slate-200 dark:bg-slate-800 shadow-xl border-4 border-white dark:border-slate-900">
+                        <img src="Shinehtetaung.jpg" alt="Shine Htet Aung Profile" class="w-full h-full object-cover object-center" onerror="this.src='https://placehold.co/300x300/1e293b/ffffff?text=SHA'">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-16 sm:py-24 bg-white/50 dark:bg-slate-900/40 border-y border-slate-200/50 dark:border-slate-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+                <h2 class="text-xs sm:text-sm text-emerald-500 font-extrabold uppercase tracking-widest">About Me</h2>
+                <p class="mt-2 text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">Career Objective & Drive</p>
+                <div class="w-12 h-1 bg-emerald-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+                <!-- Left Details -->
+                <div class="space-y-5 sm:space-y-6">
+                    <h3 class="text-xl sm:text-2xl font-bold">Enhancing operational efficiency through clean data</h3>
+                    <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
+                        I am a motivated professional with a strong background in inventory management and data operations. Dedicated to enhancing organizational efficiency through advanced technical skills in Excel, dynamic automation and a proactive growth mindset.
+                    </p>
+                    <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
+                        Whether tracking stock reconciliations at high precision, building interactive dashboards, or designing automated reporting cycles, I aim to eliminate manual errors and streamline corporate workflows.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4 sm:gap-6 pt-2">
+                        <div class="p-4 rounded-xl bg-slate-100/50 dark:bg-slate-800/50 border border-slate-200/50 dark:border-slate-700/50">
+                            <span class="block text-2xl sm:text-3xl font-black text-emerald-500">Excel</span>
+                            <span class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Specialization Expert</span>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-100/50 dark:bg-slate-800/50 border border-slate-200/50 dark:border-slate-700/50">
+                            <span class="block text-2xl sm:text-3xl font-black text-emerald-500">Precision</span>
+                            <span class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Stock Reconciliations</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Card (Personal Info List) -->
+                <div class="p-6 sm:p-8 rounded-2xl glassmorphism border border-slate-200/60 dark:border-slate-700/60 shadow-xl space-y-6">
+                    <h4 class="text-lg sm:text-xl font-bold border-b border-slate-200/60 dark:border-slate-700/60 pb-4">Personal Profile</h4>
+                    
+                    <div class="space-y-4 text-sm sm:text-base">
+                        <div class="flex flex-col sm:flex-row sm:items-center">
+                            <span class="w-full sm:w-32 text-slate-400 font-semibold mb-1 sm:mb-0">Name:</span>
+                            <span class="font-bold">Shine Htet Aung</span>
+                        </div>
+                        <div class="flex flex-col sm:flex-row sm:items-center">
+                            <span class="w-full sm:w-32 text-slate-400 font-semibold mb-1 sm:mb-0">Email:</span>
+                            <span class="font-bold hover:text-emerald-500 transition-colors">sh3628666@gmail.com</span>
+                        </div>
+                        <div class="flex flex-col sm:flex-row sm:items-center">
+                            <span class="w-full sm:w-32 text-slate-400 font-semibold mb-1 sm:mb-0">Phone:</span>
+                            <span class="font-bold">09 775 649 834</span>
+                        </div>
+                        <div class="flex flex-col sm:flex-row sm:items-center">
+                            <span class="w-full sm:w-32 text-slate-400 font-semibold mb-1 sm:mb-0">Location:</span>
+                            <span class="font-bold">Mayangone Township, Yangon</span>
+                        </div>
+                        <div class="flex flex-col sm:flex-row sm:items-center">
+                            <span class="w-full sm:w-32 text-slate-400 font-semibold mb-1 sm:mb-0">Education:</span>
+                            <span class="font-bold">B.A (History) - 3rd Year, Pyay University</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-6 border-t border-slate-200/60 dark:border-slate-700/60">
+                        <a href="Shine_Htet_Aung_CV.pdf" target="_blank" class="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white dark:bg-white dark:hover:bg-slate-100 dark:text-slate-950 font-bold text-sm transition-all shadow-md">
+                            View Reference CV (PDF)
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="py-16 sm:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+                <h2 class="text-xs sm:text-sm text-emerald-500 font-extrabold uppercase tracking-widest">Expertise</h2>
+                <p class="mt-2 text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">Technical Skills & Strengths</p>
+                <div class="w-12 h-1 bg-emerald-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Skills Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                
+                <!-- Card 1: Excel -->
+                <div class="p-6 sm:p-8 rounded-2xl bg-white dark:bg-darkCard border border-slate-100 dark:border-slate-800/80 shadow-md hover:shadow-xl transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-950/30 flex items-center justify-center text-emerald-500 mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-4">Advanced Microsoft Excel</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center justify-between">
+                            <span class="text-sm text-slate-500 dark:text-slate-400">VLOOKUP & XLOOKUP</span>
+                            <span class="font-extrabold text-xs sm:text-sm text-blue-600 dark:text-blue-400 uppercase tracking-wider">Expert</span>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <span class="text-sm text-slate-500 dark:text-slate-400">Pivot Tables & Charts</span>
+                            <span class="font-extrabold text-xs sm:text-sm text-blue-600 dark:text-blue-400 uppercase tracking-wider">Expert</span>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <span class="text-sm text-slate-500 dark:text-slate-400">Automated Tracking Dashboards</span>
+                            <span class="font-extrabold text-xs sm:text-sm text-blue-600 dark:text-blue-400 uppercase tracking-wider">Expert</span>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <span class="text-sm text-slate-500 dark:text-slate-400">Complex Logic Formulas</span>
+                            <span class="font-extrabold text-xs sm:text-sm text-blue-600 dark:text-blue-400 uppercase tracking-wider">Advanced</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Card 2: Operations -->
+                <div class="p-6 sm:p-8 rounded-2xl bg-white dark:bg-darkCard border border-slate-100 dark:border-slate-800/80 shadow-md hover:shadow-xl transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-teal-100 dark:bg-teal-950/30 flex items-center justify-center text-teal-500 mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-4">Operations & Data</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center justify-between">
+                            <span class="text-sm text-slate-500 dark:text-slate-400">Inventory Control & Audit</span>
+                            <span class="font-extrabold text-xs sm:text-sm text-blue-600 dark:text-blue-400 uppercase tracking-wider">Advanced</span>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <span class="text-sm text-slate-500 dark:text-slate-400">Stock Reconciliation</span>
+                            <span class="font-extrabold text-xs sm:text-sm text-blue-600 dark:text-blue-400 uppercase tracking-wider">Advanced</span>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <span class="text-sm text-slate-500 dark:text-slate-400">Data Entry Precision</span>
+                            <span class="font-extrabold text-xs sm:text-sm text-blue-600 dark:text-blue-400 uppercase tracking-wider">Expert</span>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <span class="text-sm text-slate-500 dark:text-slate-400">Report Automation</span>
+                            <span class="font-extrabold text-xs sm:text-sm text-blue-600 dark:text-blue-400 uppercase tracking-wider">Advanced</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Card 3: Strengths -->
+                <div class="p-6 sm:p-8 rounded-2xl bg-white dark:bg-darkCard border border-slate-100 dark:border-slate-800/80 shadow-md hover:shadow-xl transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-100 dark:bg-indigo-950/30 flex items-center justify-center text-indigo-500 mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-4">Personal Strengths</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center justify-between">
+                            <span class="text-sm text-slate-500 dark:text-slate-400">Disciplined & Detail-oriented</span>
+                            <span class="font-extrabold text-xs sm:text-sm text-blue-600 dark:text-blue-400 uppercase tracking-wider">Always</span>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <span class="text-sm text-slate-500 dark:text-slate-400">Quick Learner / Adaptation</span>
+                            <span class="font-extrabold text-xs sm:text-sm text-blue-600 dark:text-blue-400 uppercase tracking-wider">High</span>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <span class="text-sm text-slate-500 dark:text-slate-400">Problem Solving Mindset</span>
+                            <span class="font-extrabold text-xs sm:text-sm text-blue-600 dark:text-blue-400 uppercase tracking-wider">Proactive</span>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <span class="text-sm text-slate-500 dark:text-slate-400">Time Management</span>
+                            <span class="font-extrabold text-xs sm:text-sm text-blue-600 dark:text-blue-400 uppercase tracking-wider">Excellent</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience" class="py-16 sm:py-24 bg-white/50 dark:bg-slate-900/40 border-y border-slate-200/50 dark:border-slate-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+                <h2 class="text-xs sm:text-sm text-emerald-500 font-extrabold uppercase tracking-widest">History</h2>
+                <p class="mt-2 text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">Work Experience & Education</p>
+                <div class="w-12 h-1 bg-emerald-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <div class="relative border-l-2 border-slate-200 dark:border-slate-800 pl-6 sm:pl-8 ml-2 sm:ml-4 space-y-10">
+                    
+                    <!-- Exp 1 -->
+                    <div class="relative">
+                        <span class="absolute -left-[31px] sm:-left-[39px] top-1.5 bg-emerald-500 border-4 border-slate-50 dark:border-darkBg w-4 h-4 sm:w-5 sm:h-5 rounded-full"></span>
+                        <div class="p-5 sm:p-6 rounded-2xl bg-white dark:bg-darkCard border border-slate-100 dark:border-slate-800/80 shadow-sm">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-3">
+                                <h3 class="text-base sm:text-lg font-bold">Inventory Staff</h3>
+                                <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 w-fit">Gold Link Co., Ltd</span>
+                            </div>
+                            <ul class="list-disc list-inside text-xs sm:text-sm text-slate-500 dark:text-slate-400 space-y-2 pl-1">
+                                <li>Manage daily inventory records and stock reconciliation with high precision and attention to detail.</li>
+                                <li>Implemented Excel-based automation for stock tracking, significantly reducing manual data entry errors.</li>
+                                <li>Maintain optimal stock levels by coordinating effectively with procurement and warehouse teams.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Exp 2 -->
+                    <div class="relative">
+                        <span class="absolute -left-[31px] sm:-left-[39px] top-1.5 bg-emerald-500 border-4 border-slate-50 dark:border-darkBg w-4 h-4 sm:w-5 sm:h-5 rounded-full"></span>
+                        <div class="p-5 sm:p-6 rounded-2xl bg-white dark:bg-darkCard border border-slate-100 dark:border-slate-800/80 shadow-sm">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-3">
+                                <h3 class="text-base sm:text-lg font-bold">Cashier</h3>
+                                <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 w-fit">Gold Link Co., Ltd</span>
+                            </div>
+                            <ul class="list-disc list-inside text-xs sm:text-sm text-slate-500 dark:text-slate-400 space-y-2 pl-1">
+                                <li>Processed high-volume transactions accurately while maintaining excellent customer service standards.</li>
+                                <li>Prepared daily financial reports and managed cash flow records with strict accountability.</li>
+                                <li>Collaborated with team members to ensure smooth operational flow and accurate billing.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Edu -->
+                    <div class="relative">
+                        <span class="absolute -left-[31px] sm:-left-[39px] top-1.5 bg-emerald-500 border-4 border-slate-50 dark:border-darkBg w-4 h-4 sm:w-5 sm:h-5 rounded-full"></span>
+                        <div class="p-5 sm:p-6 rounded-2xl bg-white dark:bg-darkCard border border-slate-100 dark:border-slate-800/80 shadow-sm">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+                                <h3 class="text-base sm:text-lg font-bold">Bachelor of Arts (History) - 3rd Year</h3>
+                                <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 w-fit">Pyay University</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="py-16 sm:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-xs sm:text-sm text-emerald-500 font-extrabold uppercase tracking-widest">SaaS & Worksheets</h2>
+                <p class="mt-2 text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">Recent Excel & Inventory Systems</p>
+                <div class="w-12 h-1 bg-emerald-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap items-center justify-center gap-2 mb-10" id="projectFilter">
+                <button data-filter="all" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-emerald-500 text-white shadow-md transition-all">All Sheets</button>
+                <button data-filter="inventory" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-all border border-slate-200 dark:border-slate-700/60">Inventory Systems</button>
+                <button data-filter="dashboards" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-all border border-slate-200 dark:border-slate-700/60">Dashboards</button>
+            </div>
+
+            <!-- Project Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8" id="projectsGrid">
+                <!-- Javascript will load projects here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-16 sm:py-24 bg-white/50 dark:bg-slate-900/40 border-t border-slate-200/50 dark:border-slate-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+                <h2 class="text-xs sm:text-sm text-emerald-500 font-extrabold uppercase tracking-widest">Connect</h2>
+                <p class="mt-2 text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">Let's Work Together</p>
+                <div class="w-12 h-1 bg-emerald-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 max-w-6xl mx-auto">
+                
+                <!-- Contact Info Panel -->
+                <div class="lg:col-span-5 flex flex-col justify-between space-y-8">
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-bold mb-4">Have an inventory/operations project?</h3>
+                        <p class="text-sm sm:text-base text-slate-500 dark:text-slate-400 leading-relaxed">
+                            I am ready to build automated Excel systems, handle complex stock audits, or streamline your data pipelines. Fill out the form or write to me directly.
+                        </p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- Direct Info Card -->
+                        <div class="flex items-center space-x-4 p-4 rounded-2xl bg-white dark:bg-darkCard border border-slate-100 dark:border-slate-800/80 shadow-sm">
+                            <div class="p-3 bg-emerald-500/10 text-emerald-500 rounded-xl">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Email Me At</p>
+                                <a href="mailto:sh3628666@gmail.com" class="text-sm sm:text-base font-bold hover:text-emerald-500 transition-colors">sh3628666@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4 p-4 rounded-2xl bg-white dark:bg-darkCard border border-slate-100 dark:border-slate-800/80 shadow-sm">
+                            <div class="p-3 bg-emerald-500/10 text-emerald-500 rounded-xl">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Based In</p>
+                                <p class="text-sm sm:text-base font-bold">Mayangone Township, Yangon</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="text-xs text-slate-400 hidden lg:block">
+                        © 2026 Shine Htet Aung. All rights reserved. Handcrafted with Precision.
+                    </p>
+                </div>
+
+                <!-- Contact Form Card -->
+                <div class="lg:col-span-7">
+                    <!-- Formspree action target linked perfectly -->
+                    <form id="contactForm" action="https://formspree.io/f/mkolodpa" method="POST" class="p-5 sm:p-8 rounded-2xl glassmorphism border border-slate-200/60 dark:border-slate-700/60 shadow-xl space-y-5 sm:space-y-6">
+                        
+                        <!-- Hidden config input for subject line -->
+                        <input type="hidden" name="_subject" value="New Portfolio Contact from Shine Htet Aung website!">
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+                            <div>
+                                <label for="name" class="block text-xs sm:text-sm font-semibold mb-2">Your Name</label>
+                                <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200/60 dark:border-slate-700/60 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 transition-all text-xs sm:text-sm">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-xs sm:text-sm font-semibold mb-2">Your Email</label>
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200/60 dark:border-slate-700/60 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 transition-all text-xs sm:text-sm">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-xs sm:text-sm font-semibold mb-2">Message</label>
+                            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200/60 dark:border-slate-700/60 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 transition-all text-xs sm:text-sm resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white dark:bg-white dark:hover:bg-slate-100 dark:text-slate-950 font-bold text-xs sm:text-sm transition-all shadow-lg flex items-center justify-center space-x-2">
+                            <span>Send Message</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 py-10 sm:py-12 dark:bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <p class="text-lg sm:text-xl font-bold text-white tracking-wider">Shine Htet Aung</p>
+            <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs sm:text-sm">
+                <a href="#about" class="hover:text-white transition-colors">About</a>
+                <a href="#skills" class="hover:text-white transition-colors">Skills</a>
+                <a href="#projects" class="hover:text-white transition-colors">Excel Projects</a>
+                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+            </div>
+            <p class="text-[10px] sm:text-xs border-t border-slate-800 pt-6">
+                Designed & Built with ❤️ in Yangon, Myanmar. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- CUSTOM POPUP MODAL -->
+    <div id="successModal" class="fixed inset-0 z-50 flex items-center justify-center hidden px-4">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-slate-950/60 backdrop-blur-sm"></div>
+        <!-- Modal Card -->
+        <div class="relative max-w-sm sm:max-w-md w-full bg-white dark:bg-slate-800 rounded-3xl p-6 sm:p-8 border border-slate-100 dark:border-slate-700 shadow-2xl text-center space-y-5 sm:space-y-6 transform scale-95 transition-all">
+            <div class="w-12 h-12 sm:w-16 sm:h-16 bg-emerald-100 dark:bg-emerald-950 text-emerald-500 rounded-full flex items-center justify-center mx-auto text-xl sm:text-2xl font-bold">
+                ✓
+            </div>
+            <h3 class="text-xl sm:text-2xl font-bold">Thank You!</h3>
+            <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                Your message has been sent successfully. I will get in touch with you as soon as possible!
+            </p>
+            <button id="closeModalBtn" class="w-full py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white dark:bg-white dark:hover:bg-slate-100 dark:text-slate-950 font-bold text-xs sm:text-sm transition-colors">
+                Great, thanks!
+            </button>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Projects Data Array
+        const projectsData = [
+            {
+                title: "Stock Reconciliator Hub",
+                category: "inventory",
+                tech: "Excel Pivot, XLOOKUP, Data Validation",
+                desc: "An automated stock matching system built to compare multi-channel orders with physical warehouse inventory. Reduced reporting time by 75%.",
+                image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=600"
+            },
+            {
+                title: "Live Sales Forecast Dashboard",
+                category: "dashboards",
+                tech: "Excel Dashboards, Dynamic Charting",
+                desc: "A custom visual dynamic dashboard summarizing cashflow movements, stock turnover rates, and operational thresholds.",
+                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=600"
+            },
+            {
+                title: "Automated SKU Registry",
+                category: "inventory",
+                tech: "Excel Formulas, Report Automation",
+                desc: "Dynamic categorization spreadsheet that allocates SKU codes, manages critical stock warnings, and structures procurement updates.",
+                image: "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&q=80&w=600"
+            }
+        ];
+
+        // Light/Dark Theme Controller
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const sunIcon = document.getElementById('sunIcon');
+        const moonIcon = document.getElementById('moonIcon');
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            sunIcon.classList.remove('hidden');
+            moonIcon.classList.add('hidden');
+        } else {
+            document.documentElement.classList.remove('dark');
+            moonIcon.classList.remove('hidden');
+            sunIcon.classList.add('hidden');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.theme = 'light';
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.theme = 'dark';
+                moonIcon.classList.add('hidden');
+                sunIcon.classList.remove('hidden');
+            }
+        });
+
+        // Sticky Navbar background blur on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 30) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const hamburgerIcon = document.getElementById('hamburgerIcon');
+        const closeIcon = document.getElementById('closeIcon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            hamburgerIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                hamburgerIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            });
+        });
+
+        // Project Filter Logic
+        const projectsGrid = document.getElementById('projectsGrid');
+        const filterButtons = document.querySelectorAll('#projectFilter button');
+
+        function renderProjects(filter = 'all') {
+            projectsGrid.innerHTML = '';
+            
+            const filtered = filter === 'all' 
+                ? projectsData 
+                : projectsData.filter(proj => proj.category === filter);
+
+            filtered.forEach(proj => {
+                const card = document.createElement('div');
+                card.className = "group relative rounded-2xl bg-white dark:bg-darkCard border border-slate-100 dark:border-slate-800/80 shadow-md overflow-hidden hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300";
+                card.innerHTML = `
+                    <div class="h-44 sm:h-48 overflow-hidden relative">
+                        <img src="${proj.image}" alt="${proj.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://placehold.co/400x300/1e293b/ffffff?text=Excel'">
+                        <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="p-3 bg-white text-slate-950 rounded-xl">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-5 sm:p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-[10px] font-extrabold uppercase tracking-widest text-emerald-500">${proj.category}</span>
+                            <span class="text-[10px] text-slate-400 font-semibold">${proj.tech}</span>
+                        </div>
+                        <h4 class="text-base sm:text-lg font-bold mb-2 group-hover:text-emerald-500 transition-colors">${proj.title}</h4>
+                        <p class="text-slate-500 dark:text-slate-400 text-xs sm:text-sm leading-relaxed">${proj.desc}</p>
+                    </div>
+                `;
+                projectsGrid.appendChild(card);
+            });
+        }
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                filterButtons.forEach(b => {
+                    b.className = "px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-all border border-slate-200 dark:border-slate-700/60";
+                });
+                e.target.className = "px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-emerald-500 text-white shadow-md transition-all";
+                renderProjects(e.target.getAttribute('data-filter'));
+            });
+        });
+
+        // Initialize projects load
+        renderProjects();
+
+        // Contact Formspree handler and Beautiful Success Modal Trigger
+        const contactForm = document.getElementById('contactForm');
+        const successModal = document.getElementById('successModal');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(contactForm);
+            
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+                if (response.ok) {
+                    successModal.classList.remove('hidden');
+                    contactForm.reset();
+                } else {
+                    console.error('Submission failed');
+                }
+            } catch (err) {
+                console.error('Network Error:', err);
+            }
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+            successModal.classList.add('hidden');
+        });
+    </script>
+</body>
+</html>
