@@ -432,6 +432,7 @@
                 <button data-filter="all" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-emerald-500 text-white shadow-md transition-all">All Sheets</button>
                 <button data-filter="inventory" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-all border border-slate-200 dark:border-slate-700/60">Inventory Systems</button>
                 <button data-filter="dashboards" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-all border border-slate-200 dark:border-slate-700/60">Dashboards</button>
+                <button data-filter="automation" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-all border border-slate-200 dark:border-slate-700/60">Automation Tools</button>
             </div>
 
             <!-- Project Grid -->
@@ -475,6 +476,17 @@
                         </div>
 
                         <!-- Direct Info Card 2 -->
+                        <div class="flex items-center space-x-4 p-4 rounded-2xl bg-white dark:bg-darkCard border border-slate-100 dark:border-slate-800/80 shadow-sm">
+                            <div class="p-3 bg-emerald-500/10 text-emerald-500 rounded-xl">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Direct Call</p>
+                                <a href="tel:09775649834" class="text-sm sm:text-base font-bold hover:text-emerald-500 transition-colors">09 775 649 834</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Direct Info Card 3 -->
                         <div class="flex items-center space-x-4 p-4 rounded-2xl bg-white dark:bg-darkCard border border-slate-100 dark:border-slate-800/80 shadow-sm mb-3">
                             <div class="p-3 bg-emerald-500/10 text-emerald-500 rounded-xl">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
@@ -485,16 +497,7 @@
                             </div>
                         </div>
 
-                        <!-- Direct Info Card 3 -->
-                        <div class="flex items-center space-x-4 p-4 rounded-2xl bg-white dark:bg-darkCard border border-slate-100 dark:border-slate-800/80 shadow-sm">
-                            <div class="p-3 bg-emerald-500/10 text-emerald-500 rounded-xl">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                            </div>
-                            <div>
-                                <p class="text-xs text-slate-400">Direct Call</p>
-                                <a href="tel:09775649834" class="text-sm sm:text-base font-bold hover:text-emerald-500 transition-colors">09 775 649 834</a>
-                            </div>
-                        </div>
+                        
                     </div>
 
                     <p class="text-xs text-slate-400 hidden lg:block pt-4 border-t border-slate-200/50 dark:border-slate-800/50">
@@ -578,25 +581,39 @@
         // Projects Data Array
         const projectsData = [
             {
-                title: "Stock Reconciliator Hub",
+                title: "Stock Control Dashboard",
                 category: "inventory",
-                tech: "Excel Pivot, XLOOKUP, Data Validation",
-                desc: "An automated stock matching system built to compare multi-channel orders with physical warehouse inventory. Reduced reporting time by 75%.",
+                tech: "XLOOKUP, Pivot, Dashboards",
+                desc: "An automated inventory template built to calculate daily stock, reconcile warehouse differences, and flag low inventory dynamically.",
                 image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=600"
             },
             {
-                title: "Live Sales Forecast Dashboard",
+                title: "Cash Flow Automated Tracker",
                 category: "dashboards",
-                tech: "Excel Dashboards, Dynamic Charting",
-                desc: "A custom visual dynamic dashboard summarizing cashflow movements, stock turnover rates, and operational thresholds.",
+                tech: "VLOOKUP, Pivot Tables, Charts",
+                desc: "A daily transaction log compiling financial balances and creating modular, printable reports in one-click.",
+                image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=600"
+            },
+            {
+                title: "Procurement & Audit Pipeline",
+                category: "automation",
+                tech: "Excel Formulas, Cond. Formatting",
+                desc: "A procurement list comparing actual warehouse audits with current data operations to ensure optimal resource level planning.",
+                image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=600"
+            },
+            {
+                title: "Interactive Operations Metrics",
+                category: "dashboards",
+                tech: "Pivot Charts, Slicers",
+                desc: "Management-level dashboards containing interactive slicers, allowing user filtering across department outputs effortlessly.",
                 image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=600"
             },
             {
-                title: "Automated SKU Registry",
-                category: "inventory",
-                tech: "Excel Formulas, Report Automation",
-                desc: "Dynamic categorization spreadsheet that allocates SKU codes, manages critical stock warnings, and structures procurement updates.",
-                image: "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&q=80&w=600"
+                title: "Advanced Logic Reconciliation",
+                category: "automation",
+                tech: "Excel Advanced Formulas",
+                desc: "Combining NESTED IF, XLOOKUP, and text-concatenations to cross-examine and automatically fix transaction entry errors.",
+                image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&q=80&w=600"
             }
         ];
 
