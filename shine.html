@@ -426,10 +426,11 @@
                 <div class="w-12 h-1 bg-emerald-500 mx-auto mt-4 rounded-full"></div>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 max-w-6xl mx-auto">
+            <!-- Grid container with items-stretch to force equal height columns on desktop -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 max-w-6xl mx-auto items-stretch">
                 
-                <!-- Contact Info Panel -->
-                <div class="lg:col-span-5 flex flex-col justify-between space-y-8">
+                <!-- Contact Info Panel (Left Side) -->
+                <div class="lg:col-span-5 flex flex-col justify-between space-y-6 h-full">
                     <div>
                         <h3 class="text-xl sm:text-2xl font-bold mb-4">Have an inventory/operations project?</h3>
                         <p class="text-sm sm:text-base text-slate-500 dark:text-slate-400 leading-relaxed">
@@ -437,9 +438,9 @@
                         </p>
                     </div>
 
-                    <div class="space-y-4">
-                        <!-- Direct Info Card -->
-                        <div class="flex items-center space-x-4 p-4 rounded-2xl bg-white dark:bg-darkCard border border-slate-100 dark:border-slate-800/80 shadow-sm">
+                    <div class="space-y-4 flex-grow flex flex-col justify-center">
+                        <!-- Direct Info Card 1 -->
+                        <div class="flex items-center space-x-4 p-4 rounded-2xl bg-white dark:bg-darkCard border border-slate-100 dark:border-slate-800/80 shadow-sm mb-3">
                             <div class="p-3 bg-emerald-500/10 text-emerald-500 rounded-xl">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                             </div>
@@ -449,7 +450,20 @@
                             </div>
                         </div>
 
+                        
+                        <!-- Direct Info Card 2 -->
                         <div class="flex items-center space-x-4 p-4 rounded-2xl bg-white dark:bg-darkCard border border-slate-100 dark:border-slate-800/80 shadow-sm">
+                            <div class="p-3 bg-emerald-500/10 text-emerald-500 rounded-xl">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Direct Call</p>
+                                <a href="tel:09775649834" class="text-sm sm:text-base font-bold hover:text-emerald-500 transition-colors">09 775 649 834</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Direct Info Card 3 -->
+                        <div class="flex items-center space-x-4 p-4 rounded-2xl bg-white dark:bg-darkCard border border-slate-100 dark:border-slate-800/80 shadow-sm mb-3">
                             <div class="p-3 bg-emerald-500/10 text-emerald-500 rounded-xl">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                             </div>
@@ -458,45 +472,38 @@
                                 <p class="text-sm sm:text-base font-bold">Mayangone Township, Yangon</p>
                             </div>
                         </div>
+
                         
-                        <div class="flex items-center space-x-4 p-4 rounded-2xl bg-blue dark:bg-darkCard border border-slate-100 dark:border-slate-800 shadow-sm">
-                            <div class="p-3 bg-emerald-500/10 text-emerald-500 rounded-xl">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                            </div>
-                            <div>
-                                <p class="text-xs text-slate-400">Direct Call</p>
-                                <a href="tel:09775649834" class="text-sm font-bold hover:text-emerald-500 transition-colors">09 775 649 834</a>
-                            </div>
-                        </div>
                     </div>
 
-                    <p class="text-xs text-slate-400 hidden lg:block">
+                    <p class="text-xs text-slate-400 hidden lg:block pt-4 border-t border-slate-200/50 dark:border-slate-800/50">
                         © 2026 Shine Htet Aung. All rights reserved. Handcrafted with Precision.
                     </p>
                 </div>
 
-                <!-- Contact Form Card -->
-                <div class="lg:col-span-7">
-                    <!-- Formspree action target linked perfectly -->
-                    <form id="contactForm" action="https://formspree.io/f/mkolodpa" method="POST" class="p-5 sm:p-8 rounded-2xl glassmorphism border border-slate-200/60 dark:border-slate-700/60 shadow-xl space-y-5 sm:space-y-6">
+                <!-- Contact Form Card (Right Side - made h-full and flex distributed) -->
+                <div class="lg:col-span-7 h-full">
+                    <form id="contactForm" action="https://formspree.io/f/mkolodpa" method="POST" class="h-full p-5 sm:p-8 rounded-2xl glassmorphism border border-slate-200/60 dark:border-slate-700/60 shadow-xl flex flex-col justify-between space-y-5">
                         
                         <!-- Hidden config input for subject line -->
                         <input type="hidden" name="_subject" value="New Portfolio Contact from Shine Htet Aung website!">
 
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
-                            <div>
-                                <label for="name" class="block text-xs sm:text-sm font-semibold mb-2">Your Name</label>
-                                <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200/60 dark:border-slate-700/60 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 transition-all text-xs sm:text-sm">
+                        <div class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+                                <div>
+                                    <label for="name" class="block text-xs sm:text-sm font-semibold mb-2">Your Name</label>
+                                    <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200/60 dark:border-slate-700/60 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 transition-all text-xs sm:text-sm">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-xs sm:text-sm font-semibold mb-2">Your Email</label>
+                                    <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200/60 dark:border-slate-700/60 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 transition-all text-xs sm:text-sm">
+                                </div>
                             </div>
-                            <div>
-                                <label for="email" class="block text-xs sm:text-sm font-semibold mb-2">Your Email</label>
-                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200/60 dark:border-slate-700/60 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 transition-all text-xs sm:text-sm">
-                            </div>
-                        </div>
 
-                        <div>
-                            <label for="message" class="block text-xs sm:text-sm font-semibold mb-2">Message</label>
-                            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200/60 dark:border-slate-700/60 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 transition-all text-xs sm:text-sm resize-none"></textarea>
+                            <div>
+                                <label for="message" class="block text-xs sm:text-sm font-semibold mb-2">Message</label>
+                                <textarea id="message" name="message" rows="6" required class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200/60 dark:border-slate-700/60 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 transition-all text-xs sm:text-sm resize-none flex-grow"></textarea>
+                            </div>
                         </div>
 
                         <button type="submit" class="w-full py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white dark:bg-white dark:hover:bg-slate-100 dark:text-slate-950 font-bold text-xs sm:text-sm transition-all shadow-lg flex items-center justify-center space-x-2">
